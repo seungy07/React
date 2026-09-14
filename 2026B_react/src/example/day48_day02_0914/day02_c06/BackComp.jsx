@@ -1,15 +1,23 @@
-[day02 09_14]
-
-리액트 실행방법
-    - 주의할점 : 동시에 여러개 실행 x
-    1. 탐색기 빈공간에 오른쪽 클릭 -> 통합 터미널 열기
-    2. npm run dev  로 실행(터미널에서)
-    - cd..  뒤로가기
-    - cd 파일명  -> 실행 위치는 항상 최상위 폴더
-    - ls  : 현재 폴더의 파일 확인
-    PS C:\Users\ksyki\Desktop\React/2026B_react> 
-
-a 마크업 사용시 주의할점, p.104
+// p.110 ~ 112
+const BackComp = ( {onMyEvent2} ) => {
+    return (<>
+        <li><a href="/" onClick={ (event)=>{
+            event.preventDefault(); // 깜빡거림 제거 (새로고침 제거)
+            onMyEvent2('백엔드 클릭됨(자식전달)'); 
+            // (msg)=>{ alert(msg) }  
+            //msg : '백엔드 클릭됨(자식전달)'
+        }}>백엔드</a> </li>
+        <ul>
+            <li>Java</li>
+            <li>Oracle</li>
+            <li>JSP</li>
+            <li>Spring Boot</li>
+        </ul>
+    </>)
+} 
+export default BackComp;
+/*
+    a 마크업 사용시 주의할점, p.104
         - a 마크업은 HTTP GET 통신 마크업이라서 깜빡거림(새로고침).
         - 리액트는 CSR(HTTP 통신 1번) 이라서 깜빡거림 제거
         onClick = { (e) => { e.preventDefault(); } }
@@ -39,7 +47,6 @@ a 마크업 사용시 주의할점, p.104
         { onMyEvent2 : func } => { func }
          let func = () => {}
         { onMyEvent2 : () => {} } => { onMyEvent2 }
+            
 
- p.112
- index.html     <--     main.jsx    <--     Component.jsx   <--     FronComp, BackComp
- 
+*/
