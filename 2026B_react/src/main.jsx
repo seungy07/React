@@ -46,5 +46,9 @@ const create = createRoot( root );
 // create.render( <Component3/>)
 
 // [total P]
-import ProductManager from './example/totalpractice/ProductManager';
-create.render( <ProductManager /> )
+// import ProductManager from './example/totalpractice/ProductManager';
+// create.render( <ProductManager /> )
+
+// [ day03 - C08 ]
+import Component1 from './example/day49_day03_0915/day03_C08/Component1';
+create.render( <Component1 /> )
