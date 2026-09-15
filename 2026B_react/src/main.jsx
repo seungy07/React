@@ -50,5 +50,9 @@ const create = createRoot( root );
 // create.render( <ProductManager /> )
 
 // [ day03 - C08 ]
-import Component1 from './example/day49_day03_0915/day03_C08/Component1';
-create.render( <Component1 /> )
+// import Component1 from './example/day49_day03_0915/day03_C08/Component1';
+// create.render( <Component1 /> )
+
+// [ day03 - C09 ]
+import Component2 from './example/day49_day03_0915/day03_C09/Component2';
+create.render( <Component2 /> )
