@@ -54,5 +54,13 @@ const create = createRoot( root );
 // create.render( <Component1 /> )
 
 // [ day03 - C09 ]
-import Component2 from './example/day49_day03_0915/day03_C09/Component2';
-create.render( <Component2 /> )
+// import Component2 from './example/day49_day03_0915/day03_C09/Component2';
+// create.render( <Component2 /> )
+
+// [ C10 ]
+// import Component3 from './example/day49_day03_0915/day03_C10/Component3';
+// create.render( <Component3 /> )
+
+// [practice2]
+import Practice2 from './example/react_Practice2/Practice2';
+create.render(<Practice2 />)
