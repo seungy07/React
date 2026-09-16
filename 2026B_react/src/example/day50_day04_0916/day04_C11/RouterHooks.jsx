@@ -15,7 +15,7 @@ export default function RouterHooks(props){
         });
     }
 
-    const nextPage = () => {
+    const nextPage = () => { // isNaN : 숫자로 바꿀 수 있는가를 확인 
         let pageTemp = (pageNum === null || isNaN(pageNum) ) ? 1 : parseInt(pageNum) + 1 ;
         setSearchParams({
             mode, pageNum : pageTemp
