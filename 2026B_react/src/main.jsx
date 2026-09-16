@@ -62,5 +62,8 @@ const create = createRoot( root );
 // create.render( <Component3 /> )
 
 // [practice2]
-import Practice2 from './example/react_Practice2/Practice2';
-create.render(<Practice2 />)
+// import Practice2 from './example/react_Practice2/Practice2';
+// create.render(<Practice2 />)
+// [practice2 - form 형태]
+import FormPractice2 from './example/react_Practice2/FormPractice2';
+create.render(<FormPractice2/>)
