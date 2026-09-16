@@ -11,59 +11,12 @@ const create = createRoot( root );
 // 2. 가져온 컴포넌트 렌더링하기
 // create.render( <App> </App> )
 
-// [day01] render 1번 가능하므로 예제 컴포넌트 변경
-// import MyMarkup from "./example/day01/MyMarKup";
-// create.render( <MyMarkup> </MyMarkup>)
-
-//import Component1 from "./example/day01/Component1";
-//create.render( <Component1> </Component1> )
-
-// import Component2 from "./example/day01/Component2";
-// create.render( <Component2 /> )
-
-// import Component3 from "./example/day01/Component3";
-// create.render( <Component3/> )
-
-// import Component4 from "./example/day01/Component4";
-// create.render( <Component4/> )
-
-// import Component5 from "./example/day47_day01_0911/Component5";
-// create.render( <Component5/> )
-
-// [Practice1] 
-// import Practice1 from "./example/react_Practice1/Practice1";
-// create.render( <Practice1/> )
-
-// [day02 - C06]
-// import Component1 from "./example/day48_day02_C06/day02_c06/Component1";
-// create.render( <Component1/> )
-
-// import Component2 from "./example/day48_day02_0914/Component2";
-// create.render( <Component2/> )
-
-// [day02 - C07]
-// import Component3 from './example/day48_day02_0914/day02_c07/Component3';
-// create.render( <Component3/>)
-
-// [total P]
-// import ProductManager from './example/totalpractice/ProductManager';
-// create.render( <ProductManager /> )
-
-// [ day03 - C08 ]
-// import Component1 from './example/day49_day03_0915/day03_C08/Component1';
-// create.render( <Component1 /> )
-
-// [ day03 - C09 ]
-// import Component2 from './example/day49_day03_0915/day03_C09/Component2';
-// create.render( <Component2 /> )
-
-// [ C10 ]
-// import Component3 from './example/day49_day03_0915/day03_C10/Component3';
-// create.render( <Component3 /> )
-
 // [practice2]
 // import Practice2 from './example/react_Practice2/Practice2';
 // create.render(<Practice2 />)
-// [practice2 - form 형태]
-import FormPractice2 from './example/react_Practice2/FormPractice2';
-create.render(<FormPractice2/>)
+
+// [day04 - 09 / 16]
+import { BrowserRouter } from 'react-router-dom'; // 1. 라우터 라이브러리 가져오기
+import App from './example/day50_day04_0916/day04_C11/App';
+// 2. 최초 렌더링 되는 컴포넌트 앞뒤로 라우터 컴포넌트 감싼다
+create.render( <BrowserRouter> <App /> </BrowserRouter>)
