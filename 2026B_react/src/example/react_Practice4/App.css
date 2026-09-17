@@ -1,0 +1,28 @@
+#sidebar{
+    background-color: pink;
+    position: fixed;
+    top: 0;      
+    left: 0;          
+    width: 200px;      
+     height: 100vh;
+}
+#team{
+    text-align: center;
+    color: white;
+    border-bottom: solid 1px red;
+    margin-bottom: 10px;
+}
+#main{
+    margin-left: 300px;
+}
+
+*{
+    list-style: none;
+}
+#list{
+    padding-top: 5px;
+}
+#list > li {
+    padding-bottom: 10px;
+    font-size: 20px;
+}

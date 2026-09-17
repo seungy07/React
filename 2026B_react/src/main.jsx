@@ -22,6 +22,11 @@ const create = createRoot( root );
 // create.render( <BrowserRouter> <App /> </BrowserRouter>)
 
 // [day 05 C12 ]
-import App from "./example/day51_day05_0917/day05_C12/App"
+// import App from "./example/day51_day05_0917/day05_C12/App"
+// import { BrowserRouter } from 'react-router-dom';
+// create.render( <BrowserRouter> <App/> </BrowserRouter>)
+
+
 import { BrowserRouter } from 'react-router-dom';
-create.render( <BrowserRouter> <App/> </BrowserRouter>)
+import App from './example/react_Practice4/App';
+create.render( <BrowserRouter><App/></BrowserRouter>)
