@@ -16,7 +16,12 @@ const create = createRoot( root );
 // create.render(<Practice2 />)
 
 // [day04 - 09 / 16]
-import { BrowserRouter } from 'react-router-dom'; // 1. 라우터 라이브러리 가져오기
-import App from './example/react_Practice3/App';
-// 2. 최초 렌더링 되는 컴포넌트 앞뒤로 라우터 컴포넌트 감싼다
-create.render( <BrowserRouter> <App /> </BrowserRouter>)
+// import { BrowserRouter } from 'react-router-dom'; // 1. 라우터 라이브러리 가져오기
+// import App from './example/react_Practice3/App';
+// // 2. 최초 렌더링 되는 컴포넌트 앞뒤로 라우터 컴포넌트 감싼다
+// create.render( <BrowserRouter> <App /> </BrowserRouter>)
+
+// [day 05 C12 ]
+import App from "./example/day51_day05_0917/day05_C12/App"
+import { BrowserRouter } from 'react-router-dom';
+create.render( <BrowserRouter> <App/> </BrowserRouter>)
