@@ -7,9 +7,12 @@ import "./Cjw.css";
 function CategoriesPrint(props){
     const [categories, setCategories] = useState ( [] );
 
-    useEffect( async function() {
-        const response = await axios.get("https://wellness-exclusion-surfing-advisory.trycloudflare.com/api/categories");
-        setCategories(response.data);
+    useEffect(  () =>{ 
+        const getData = async () => {
+            const response = await axios.get("https://wellness-exclusion-surfing-advisory.trycloudflare.com/api/categories");
+            setCategories(response.data);
+        }
+        getData();
     }, []);
 
     return (

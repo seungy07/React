@@ -8,7 +8,6 @@
     background-color: white;
     border-radius: 10px;
     padding: 20px;
-
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
@@ -31,12 +30,9 @@
 .profileTitle {
     width: 130px;
     padding: 18px;
-
     background-color: #f6f8fb;
-
     font-weight: bold;
     color: #344054;
-
     display: flex;
     align-items: center;
 }
@@ -46,61 +42,85 @@
     padding: 18px;
 }
 
-
 /* 카테고리 전체 영역 */
 .categoryBox {
     width: 100%;
 }
 
-
 /* 카테고리 제목 */
 .categoryHeader {
     display: flex;
     justify-content: space-between;
-
     padding: 10px 15px;
-
     background-color: #f8f9fa;
     border-radius: 6px;
-
     font-size: 13px;
     color: #777;
 }
-
 
 /* 카테고리 한 줄 */
 .categoryItem {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 12px 15px;
-
     border-bottom: 1px solid #eee;
-
     transition: 0.2s;
 }
 
-
-/* 마우스 올렸을 때 */
 .categoryItem:hover {
     background-color: #f5f8ff;
 }
 
-
-/* 카테고리 이름 */
 .categoryName {
     font-weight: 500;
 }
 
-
-/* cno */
 .categoryNo {
     background-color: #eef3ff;
     padding: 4px 10px;
-
     border-radius: 15px;
-
     font-size: 12px;
     color: #356ae6;
+}
+
+
+/* =========================
+   제품 등록
+   ========================= */
+
+.productInput {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid #dcdfe5;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+.productInput:focus {
+    border-color: #356ae6;
+}
+
+.productButtonBox {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+}
+
+.productButton {
+    padding: 10px 22px;
+    border: none;
+    border-radius: 6px;
+    background-color: #356ae6;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.productButton:hover {
+    opacity: 0.85;
 }
