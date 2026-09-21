@@ -1,8 +1,12 @@
 import NavList from "./NavList";
+import NavWrite from "./NavWrite";
+import NavView from "./NavView";
+import NavEdit from "./NavEdit";
 import ArticleList from "./ArticleList";
 import { useState } from "react";
 import ArticleView from "./ArticleView";
 import ArticleWrite from "./ArticleWrite";
+import ArticleEdit from "./ArticleEdit";
 
 function Header(props){
     return (

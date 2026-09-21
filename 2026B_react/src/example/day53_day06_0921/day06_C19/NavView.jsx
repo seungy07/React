@@ -5,7 +5,10 @@ export default function NavView(props){
                 e.preventDefault();
                 props.onChangeMode("list");
             }}> 목록 </a>&nbsp;
-            <a href="/"> 수정 </a>&nbsp;
+            <a href="/" onClick={function (e){
+                e.preventDefault();
+                props.onChangeMode('edit');
+            }}> 수정 </a>{" "}
             <a href="/" onClick={function (e){
                 e.preventDefault();
                 if(window.confirm('삭제할까요?')){
