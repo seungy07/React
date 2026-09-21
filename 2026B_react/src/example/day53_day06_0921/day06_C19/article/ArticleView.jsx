@@ -5,7 +5,6 @@ export default function ArticleView(props){
                 <colgroup>
                     <col width="30%" /><col width="*" />
                 </colgroup>
-
                 <tbody>
                     <tr>
                         <th>작성자</th>
@@ -20,13 +19,13 @@ export default function ArticleView(props){
                         <td> {props.selectRow.date} </td>
                     </tr>
                     <tr>
-                        <th>내용</th>
+                        <th>내용1</th>
                         <td> {props.selectRow.contents} </td>
                     </tr>
                     <tr>
                         <th>내용2</th>
                         <td>{
-                            props.selectRow.contents.split('/n').map( (currVal) => {
+                            props.selectRow.contents.split('\n').map( (currVal) => {
                                 return (<>
                                     {currVal} <br key={Math.random()} />
                                 </>);

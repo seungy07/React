@@ -1,12 +1,12 @@
-import NavList from "./NavList";
-import NavWrite from "./NavWrite";
-import NavView from "./NavView";
-import NavEdit from "./NavEdit";
-import ArticleList from "./ArticleList";
+import NavList from "./navigation/NavList";
+import ArticleList from "./article/ArticleList"
 import { useState } from "react";
-import ArticleView from "./ArticleView";
-import ArticleWrite from "./ArticleWrite";
-import ArticleEdit from "./ArticleEdit";
+import ArticleView from "./article/ArticleView";
+import ArticleWrite from "./article/ArticleWrite";
+import NavWrite from "./navigation/NavWrite"
+import NavView from "./navigation/NavView";
+import NavEdit from "./navigation/NavEdit";
+import ArticleEdit from "./article/ArticleEdit";
 
 function Header(props){
     return (
@@ -34,18 +34,15 @@ export default function App(props){
     let articleComp, navComp, titleVar, selectRow;
     if(mode === "list"){
         titleVar= "게시판-목록";
-        navComp = (
-            <NavList onChangeMode={
-                () => { setMode("write"); }
+        navComp = <NavList onChangeMode={() => { setMode("write"); }
             }></NavList>
-        );
-        articleComp = (
-            <ArticleList boardData={boardData}
+        
+        articleComp =<ArticleList boardData={boardData}
             onChangeMode={ (no) => {
                 setMode("view");
                 setNo(no);
             } }></ArticleList> 
-        );
+    
     }else if (mode === "view"){
         titleVar = "게시판-열람";
         navComp = <NavView onChangeMode={ (pmode) => {setMode(pmode);}}></NavView>
@@ -60,14 +57,13 @@ export default function App(props){
 
     }else if(mode==="write"){
         titleVar = "게시판-쓰기";
-        navComp = (
-            <NavWrite onChangeMode={
+        navComp = <NavWrite onChangeMode={
                 ()=> {setMode("list");}
             }></NavWrite>
-        );
+        
         articleComp = <ArticleWrite writeAction={ (t,w,c) => {
             let nowDate = new Date().toISOString().slice(0,10);
-            let addBoardData = {no: nextNo, title: t, writer: w, contents: c, date: nowDate};
+            let addBoardData = {no:nextNo, title:t, writer:w, contents:c, date:nowDate};
             let copyBoardData = [...boardData];
             copyBoardData.push(addBoardData);
 
@@ -83,8 +79,32 @@ export default function App(props){
         }
         setBoardData(newBoardData);
         setMode('list');
+
+    }else if(mode === 'edit'){
+        titleVar = '게시판-구성';
+        navComp = <NavEdit onChangeMode={ ()=>{setMode('list');}} onBack={()=>{setMode('view');}}></NavEdit>
+    
+
+    for(let i=0; i<boardData.length ; i++){
+        if(no===boardData[i].no){
+            selectRow = boardData[i];
+        }
     }
 
+    articleComp = <ArticleEdit selectRow={selectRow} editAction={
+        (t,w,c) => {let editBoardData = {no:no, title:t, writer:w, contents:c, date:selectRow.date};
+                    let copyBoardData =[...boardData];
+                    for(let i=0; i<copyBoardData.length; i++){
+                        if(copyBoardData[i].no === no){
+                            copyBoardData[i] = editBoardData;
+                            break;
+                        }
+                    }
+                    setBoardData(copyBoardData);
+                    setMode('view')
+                }
+    }></ArticleEdit>
+    }
 
     return (<>
         <Header title={titleVar}></Header>

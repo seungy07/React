@@ -5,7 +5,7 @@ export default function ArticleList(props){
         lists.push(
             <tr key={row.no}>
                 <td className="cen">{row.no}</td>
-                <td><a href={'/read/' + row.no} onClick={(e)=>{
+                <td><a href={'/read/' +row.no} onClick={(e)=>{
                     e.preventDefault();
                     props.onChangeMode(row.no);
                 }}> {row.title} </a></td>

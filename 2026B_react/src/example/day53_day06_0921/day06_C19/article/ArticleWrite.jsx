@@ -1,7 +1,13 @@
 export default function ArticleWrite(props){
     return (
         <article>
-            <form>
+            <form onSubmit={(e) => {
+                e.preventDefault();
+                const title = e.target.title.value;
+                const writer = e.target.writer.value;
+                const contents = e.target.contents.value;
+                props.writeAction(title, writer, contents);
+            }}>
                 <table id="boardTable">
                     <tbody>
                         <tr>
@@ -18,7 +24,7 @@ export default function ArticleWrite(props){
                     </tbody>
                 </table>
 
-                <input type="sbumit" value="전송" />
+                <button type="sbumit">전송</button>
             </form>
         </article>
     );
