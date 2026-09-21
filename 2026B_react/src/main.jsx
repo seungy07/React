@@ -28,5 +28,5 @@ const create = createRoot( root );
 
 
 import { BrowserRouter } from 'react-router-dom';
-import App from './example/react_spring_api_p/App';
+import App from './example/day53_day06_0921/day06_C13/App';
 create.render( <BrowserRouter><App/></BrowserRouter>)
