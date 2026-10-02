@@ -38,25 +38,21 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // 새로고침 시 톰캣 세션 유지 확인 (/api/member/me)
-  useEffect(() => {
-    axios.get('http://localhost:8080/api/member/myinfo', { withCredentials: true })
-      .then((res) => {
-        // 데이터가 유효하면 유저 객체 설정, null/빈문자열이면 비로그인 처리
-        if (res.data) {
-          setCurrentUser(res.data);
-        } else {
-          setCurrentUser(null);
-        }
-      })
-      .catch((err) => {
-        console.error('세션 확인 실패:', err);
-        setCurrentUser(null);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
+  // 내정보 조회시 accessToken 사용하여 조회. 만일 만료되면 재발급
+  const checkAuth = async () => {
+    // 1.내정보 조회, 주의할점 : 쿠키/세션 사용ㅅ {withCredntials : true } 옵션 포함
+    // axios.post( url, vody, {withCredntials : true } )
+    // axios get( url, {withCredntials : true })
+    const response = await axios.get( "http://localhost:8080/api/member/myinfo", {withCredntials : true } )
+    if(response.data) { setCurrentUser(response.data); setLoading(false); return; }
+
+    // 2. 만약ㅇ[ access 토큰 없어서 내정보 조회 실패시 [RTR] 토큰 재발급 ]
+    const response2 = await axios.post("http://localhost:8080/api/member/reissue", {}, {withCredentials : true} )
+    if( response2.data){ setCurrentUser(response2.data); } // 재발급 성공
+    else{ setCurrentUser(null); } // 재발급 실패
+    setLoading(false);
+  }
+  useEffect(() => { checkAuth(); }, []);
 
   if (loading) {
     return <div style={{ padding: '20px', textAlign: 'center' }}>세션 확인 중...</div>;
