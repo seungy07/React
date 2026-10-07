@@ -28,5 +28,5 @@ const create = createRoot( root );
 
 
 import { BrowserRouter } from 'react-router-dom';
-import App from './example/day60_day09_day14/day14/App';
-create.render( <BrowserRouter><App/></BrowserRouter>)
+import ChatRoom from './example/day62_day10_day15/ChatRoom';
+create.render(<ChatRoom />)
